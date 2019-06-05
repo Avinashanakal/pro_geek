@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+class employee{
+    virtual int getsalary()=0;
+};
+class developer: public employee {
+    int salary;
+    public:
+    developer(int t){
+        salary=t;
+    }
+    int getsalary(){
+        return salary;
+    }
+};
+class support: public employee{
+    int salary;
+    public:
+    support(int s){
+        salary=s;
+    }
+    int getsalary(){
+        return salary;
+    }
+};
+int main()
+{
+   developer d(3000);
+   support s(5000);
+   cout<<d.getsalary()<<endl<<s.getsalary();
+    return 0;
+}
